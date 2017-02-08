@@ -4,7 +4,7 @@ Version: 0.0.0.9000
 Authors@R: person("Patrick", "Leslie", email = "palesl@essex.ac.uk", role = c("aut", "cre"))
 Description: This package takes text data from pdf documents and provides a number of methods for analysis. The aim of the package is to provide an open source resource to researchers looking to apply text analysis directky to pdf documents.
 Depends: R (>= 3.3.2)
-License: Open Source
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
