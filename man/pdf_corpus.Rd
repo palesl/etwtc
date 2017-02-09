@@ -15,7 +15,7 @@ This function reads pdf files into R, and creates a corpus for text analysis.
 \details{
 IMPORTANT: This function requires the installation of additional pdf extraction software.
 
-The extraction engine comes courtesy of http://www.foolabs.com/xpdf/download.html (open source)
+The extraction engine comes courtesy of  \url{http://www.foolabs.com/xpdf/download.html} (open source)
 
 Download the appropriate file for your operating system
 
