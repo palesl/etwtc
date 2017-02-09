@@ -19,4 +19,4 @@ Open R:
 
 install.packages('devtools')
 library(devtools)
-install_github('etwtc', 'palesl')
+install_github('palesl/etwtc')
