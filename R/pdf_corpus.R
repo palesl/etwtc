@@ -9,7 +9,9 @@
 #' Download the appropriate file for your operating system
 #'
 #' xpdfbin-mac-3.04.tar.gz for MacOS or OSX
+#'
 #' xpdfbin-win-3.04.zip for Windows
+#'
 #' xpdfbin-linux-3.04.tar.gz for Linux
 #'
 #' Extract the folders and install according to the instructions within the INSTALL file.
