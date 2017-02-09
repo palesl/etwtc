@@ -39,3 +39,4 @@ pdf_corpus <- function(path){
   return(corpus)
 
 }
+
