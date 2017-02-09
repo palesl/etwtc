@@ -12,6 +12,19 @@ pdf_corpus(path)
 \description{
 This function reads pdf files into R, and creates a corpus for text analysis.
 }
+\details{
+IMPORTANT: This function requires the installation of additional pdf extraction software.
+
+The extraction engine comes courtesy of http://www.foolabs.com/xpdf/download.html (open source)
+
+Download the appropriate file for your operating system
+
+xpdfbin-mac-3.04.tar.gz for MacOS or OSX
+xpdfbin-win-3.04.zip for Windows
+xpdfbin-linux-3.04.tar.gz for Linux
+
+Extract the folders and install according to the instructions within the INSTALL file.
+}
 \examples{
 pdf_corpus(path = '~/User/folder/')
 }
