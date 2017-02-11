@@ -6,6 +6,14 @@
 \usage{
 pdf_corpus(path)
 }
+\arguments{
+\item{path}{A directory address to a folder containing one or more .pdf documents.}
+}
 \description{
 This function reads pdf files into R, and creates a corpus for text analysis.
 }
+\examples{
+pdf_corpus(path = '~/User/folder/')
+}
+\keyword{Corpus}
+\keyword{pdf}
