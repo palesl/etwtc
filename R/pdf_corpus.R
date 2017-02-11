@@ -1,41 +1,37 @@
 #' Pdf documents to a corpus
 #'
 #' This function reads pdf files into R, and creates a corpus for text analysis.
-#'
-#' IMPORTANT: This function requires the installation of additional pdf extraction software.
-#'
-#' The extraction engine comes courtesy of  \url{http://www.foolabs.com/xpdf/download.html} (open source)
-#'
-#' Download the appropriate file for your operating system
-#'
-#' xpdfbin-mac-3.04.tar.gz for MacOS or OSX
-#'
-#' xpdfbin-win-3.04.zip for Windows
-#'
-#' xpdfbin-linux-3.04.tar.gz for Linux
-#'
-#' Extract the folders and install according to the instructions within the INSTALL file.
-#'
-#' @param path A directory address to a folder containing one or more .pdf documents.
-#' @keywords pdf Corpus
-#' @export
-#' @examples
-#' pdf_corpus(path = '~/User/folder/')
+
 
 pdf_corpus <- function(path){
   library(tm)
+  library(pdftools)
+
   files <- list.files(path = path, pattern = "pdf$")
 
   files <- paste(path, '/', files, sep='' )
 
   files <- gsub('//','/', files)
 
-  Rpdf <- readPDF(control = list(text = "-layout"))
+  list <- NULL
 
-  corpus <- Corpus(URISource(files),
-                     readerControl = list(reader = Rpdf))
+  for(i in 1:length(files)){
+    single <- pdf_text(files[i], opw = "", upw = "")
+    single <- gsub('\r\n',' ', single)
+    single <- paste(single, collapse=" ")
+    list[[i]]<- single
+  }
 
-  names(corpus) <- gsub('.pdf','', names(corpus))
+
+  corpus <- VCorpus(VectorSource(list))
+
+  files2 <- list.files(path = path, pattern = "pdf$")
+
+  files2 <- gsub('.pdf', '', files2)
+
+  names(corpus) <- files2
+
+
 
 
   return(corpus)
